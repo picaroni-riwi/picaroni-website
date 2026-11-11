@@ -6,9 +6,10 @@
   <title>Validación Tailwind v4</title>
   <link href="dist/output.css" rel="stylesheet">
 </head>
-<body class="bg-slate-900 text-white min-h-screen flex items-center justify-center p-4 ">
+<body class="bg-slate-900 text-white min-h-screen flex items-center justify-center p-4 grid grid-cols-1">
 
-  </style>
+
+
   <div class="bg-slate-800 border border-slate-700 p-8 rounded-2xl shadow-xl max-w-md w-full text-center space-y-4">
     <span class="inline-block bg-emerald-500/20 text-emerald-400 text-xs font-semibold px-3 py-1 rounded-full">
       Tailwind CSS v4
@@ -30,64 +31,46 @@
 
 
 
-  
-  <section class="text-center m-2 p-2 text-primary  ">
-    <h2 class="">Hábitats que protegemos</h2>
-      <div class="grid m-2 p-2 sm:grid-cols-1 md: grid-cols-2 lg:grid-cols-4">
-    <article class="flex flex-col m-2 bg-brand">
-      <img class="w-full h-56 objet-cover" src="/picaroni-website/src/img/emperador1.jpg" alt="Penguin with your family">
-      <p>
-        Frío · Antártida
-      </p>
-      <h3>
-        Emperador
-      </h3>
-      <p>
-        El gigante que incuba a −60°C.
-      </p>
-      <a href="pinguinos.html" class="bg-secondary mt-auto">Ver ficha</a>
-    </article>
-   <article class="flex flex-col m-2 bg-brand">
-      <img class="w-full h-56 objet-cover" src="/picaroni-website/src/img/Magallanico1.jpg" alt="Penguin see another Penguin">
-      <p>
-        Templado · Patagonia
-      </p>
-      <h3>
-        Magallánico
-      </h3>
-      <p>
-        Madrigueras y migraciones eternas.
-      </p>
-      <a href="pinguinos.html" class="bg-secondary mt-auto">Ver ficha</a>
-    </article>
-    <article class="flex flex-col m-2 bg-brand">
-      <img class="w-full h-56 objet-cover" src="/picaroni-website/src/img/De-Galapagos1.jpeg" alt="Penguin on the beach">
-      <p>
-        Tropical · Galápagos
-      </p>
-      <h3>
-        De Galápagos 	
-      </h3>
-      <p>
-        El único que cruza el ecuador.
-      </p>
-      <a href="pinguinos.html" class="bg-secondary mt-auto">Ver ficha</a>
-    </article>
-      <article class="flex flex-col m-2 bg-brand">
-      <img class="w-full h-56 objet-cover" src="/picaroni-website/src/img/AfricanPenguin.jpg" alt="Penguin looking at the camera">
-      <p>
-        Cálido · Sudáfrica
-      </p>
-      <h3>
-        Africano
-      </h3>
-      <p>
-        El burro del mar: rebuzna para llamar.
-      </p>
-      <a href="pinguinos.html" class="bg-secondary mt-auto">Ver ficha</a>  
-    </article>
-    </div>
-  </section>
 
+ 
+
+  <footer class="flex flex-col h-full text-center">
+
+    <section class="bg-brand mt-auto">
+     <span>Picaroni</span> <p>Cuidamos cada pingüino, en cada clima.</p>
+     
+     <div class="sm:grid grid-cols-1 md:grid grid-cols-2">
+      <div class="">
+        <span class="">Explorar  </span>
+        <a href="">Inicio</a>
+        <a href="">Pingüinos</a>
+        <a href="">Nosotros</a>
+        <a href="">Souvenirs</a>
+        <a href="">Voluntariado</a>
+      </div>
+      <div class="">
+        <span>Ayudar</span>
+        <a href="">Donar</a>
+        <a href="">Evidencia</a>
+        <a href="">Transparencia</a>
+        <a href="">Empresas</a>
+      </div>
+      </div>
+      <div class="">
+        <Span>Boletín</Span>
+        <form action="post">
+        <label for="email">Carta polar · 1 email al mes</label>
+        <small>Rescates, expediciones y resultados. Sin spam.</small>
+        <input type="email" id="email">
+        <button >Unirse</button>
+        </form>
+      </div>
+      
+
+     <p>© 2026 Picaroni. Todos los aportes se destinan al cuidado y preservación de la especie.</p> 
+    </section>
+   
+  </footer>
 </body>
 </html>
+
