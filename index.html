@@ -6,26 +6,33 @@
   <title>Validación Tailwind v4</title>
   <link href="dist/output.css" rel="stylesheet">
 </head>
-<body class="bg-slate-900 text-white min-h-screen flex items-center justify-center p-4">
-
-  <div class="bg-slate-800 border border-slate-700 p-8 rounded-2xl shadow-xl max-w-md w-full text-center space-y-4">
-    <span class="inline-block bg-emerald-500/20 text-emerald-400 text-xs font-semibold px-3 py-1 rounded-full">
-      Tailwind CSS v4
-    </span>
-    
-    <h1 class="text-3xl font-bold tracking-tight">
-      ¡Estilos funcionando!
-    </h1>
-    
-    <p class="text-slate-400 text-sm">
-      Si ves esta tarjeta centrada sobre un fondo oscuro, tu archivo 
-      <code class="text-sky-400">output.css</code> se compiló correctamente.
-    </p>
-
-    <button class="w-full bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold py-2.5 px-4 rounded-lg transition cursor-pointer">
-      Botón de prueba
-    </button>
-  </div>
-
+<body class="bg-slate-900 text-white min-h-screen">
+  <main class="w-full">
+     <!--tarjetas de estado de impacto-->
+    <section
+      id="impact-stats"
+      aria-label="Estadísticas de impacto"
+      class="w-full border-t border-gray-200 bg-gray-100 px-6 py-10"
+    >
+      <div class="grid grid-cols-2 gap-6 text-center md:grid-cols-4">
+        <div>
+          <p class="text-4xl font-bold text-slate-700">18</p>
+          <p class="text-xs uppercase tracking-widest text-gray-600">Especies protegidas</p>
+        </div>
+        <div>
+          <p class="text-4xl font-bold text-slate-700">6</p>
+          <p class="text-xs uppercase tracking-widest text-gray-600">Hábitats activos</p>
+        </div>
+        <div>
+          <p class="text-4xl font-bold text-slate-700">320</p>
+          <p class="text-xs uppercase tracking-widest text-gray-600">Voluntarios / año</p>
+        </div>
+        <div>
+          <p class="text-4xl font-bold text-slate-700">100%</p>
+          <p class="text-xs uppercase tracking-widest text-gray-600">Fondos verificables</p>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
