@@ -30,31 +30,16 @@
 
     <div class="flex items-center justify-between gap-3">
       <a href="../index.html" class="font-display text-xl font-bold text-primary">Picaroni</a>
-
-      <button
-              type="button"
-              id="menu-btn"
-              aria-expanded="false" aria-controls="menu"
-              class="xl:hidden rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-primary hover:bg-slate-50 transition-colors cursor-pointer">
-        Menú
-      </button>
       <div class="flex items-center gap-2">
-        <button type="button" id="theme-toggle"
-                class="rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-primary hover:bg-slate-50 transition-colors cursor-pointer">
-          Modo oscuro
-        </button>
-        <button type="button" id="menu-btn" aria-expanded="false"
-                class="md:hidden rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-primary hover:bg-slate-50 transition-colors cursor-pointer">
-          Menú
-        </button>
+        <button type="button" id="theme-toggle" class="rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-primary hover:bg-slate-50 transition-colors cursor-pointer">Modo oscuro</button>
+        <button type="button" id="menu-btn" aria-expanded="false" aria-controls="menu" class="xl:hidden rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-primary hover:bg-slate-50 transition-colors cursor-pointer">Menú</button>
       </div>
     </div>
 
-    <nav id="menu" aria-label="Principal"
-         class="hidden xl:block mt-4 xl:mt-0 border-t border-slate-200 pt-2 xl:border-0 xl:pt-0">
+    <nav id="menu" aria-label="Principal" class="hidden xl:block mt-4 xl:mt-0 border-t border-slate-200 pt-2 xl:border-0 xl:pt-0">
       <ul class="flex flex-col text-sm xl:flex-row xl:items-center xl:gap-6">
         <li><a href="../index.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Inicio</a></li>
-        <li><a href="pinguinos.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Pingüinos</a></li>
+        <li><a href="pinguinos.html" class="block py-2 font-semibold text-primary xl:py-0" aria-current="page">Pingüinos</a></li>
         <li><a href="nosotros.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Nosotros</a></li>
         <li><a href="souvenirs.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Souvenirs</a></li>
         <li><a href="voluntariado.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Voluntariado</a></li>
@@ -114,7 +99,7 @@
             <li><a href="../index.html" class="hover:text-white transition-colors">Inicio</a></li>
             <li><a href="pinguinos.html" class="hover:text-white transition-colors">Pingüinos</a></li>
             <li><a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Souvenirs</a></li>
+            <li><a href="souvenirs.html" class="hover:text-white transition-colors">Souvenirs</a></li>
             <li><a href="voluntariado.html" class="hover:text-white transition-colors">Voluntariado</a></li>
           </ul>
         </div>
@@ -124,7 +109,7 @@
             <li><a href="donar.html" class="hover:text-white transition-colors">Donar</a></li>
             <li><a href="evidencia.html" class="hover:text-white transition-colors">Evidencia</a></li>
             <li><a href="transparencia.html" class="hover:text-white transition-colors">Transparencia</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Empresas</a></li>
+            <li><a href="empresas.html" class="hover:text-white transition-colors">Empresas</a></li>
           </ul>
         </div>
       </div>
