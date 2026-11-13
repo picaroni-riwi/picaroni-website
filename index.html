@@ -9,7 +9,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
   <link href="dist/output.css" rel="stylesheet">
 </head>
 
@@ -19,17 +27,19 @@
 <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
   <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between">
 
-    <div class="flex items-center justify-between">
+    <div class="flex items-center justify-between gap-3">
       <a href="index.html" class="font-display text-xl font-bold text-primary">Picaroni</a>
 
-      <!-- Paso 1 y 4: Botón real con texto "Menú" y aria-expanded -->
-      <button
-              type="button"
-              id="menu-btn"
-              aria-expanded="false"
-              class="md:hidden rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-primary hover:bg-slate-50 transition-colors cursor-pointer">
-        Menú
-      </button>
+      <div class="flex items-center gap-2">
+        <button type="button" id="theme-toggle"
+                class="rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-primary hover:bg-slate-50 transition-colors cursor-pointer">
+          Modo oscuro
+        </button>
+        <button type="button" id="menu-btn" aria-expanded="false"
+                class="md:hidden rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-primary hover:bg-slate-50 transition-colors cursor-pointer">
+          Menú
+        </button>
+      </div>
     </div>
 
     <!-- Paso 2: Oculto en móvil (hidden), visible en fila desde md (md:flex) -->
@@ -166,7 +176,7 @@
     <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
 
       <article class="flex flex-col bg-white border border-slate-200 rounded-xl p-4 shadow-md text-left">
-        <img data-easter-egg class="w-full h-56 object-cover rounded-lg mb-4" src="/picaroni-website/src/img/Penguin_emperor.jpg" alt="Penguin with your family">
+        <img data-easter-egg class="w-full h-56 object-cover rounded-lg mb-4" src="src/img/Penguin_emperor.jpg" alt="Penguin with your family">
         <p class="text-xs font-semibold uppercase tracking-wider text-secondary mb-1">Frío · Antártida</p>
         <h3 class="font-display text-2xl font-medium italic text-primary mb-2">Emperador</h3>
         <p class="text-sm text-slate-500 mb-4">El gigante que incuba a −60°C.</p>
@@ -174,7 +184,7 @@
       </article>
 
       <article class="flex flex-col bg-white border border-slate-200 rounded-xl p-4 shadow-md text-left">
-        <img class="w-full h-56 object-cover rounded-lg mb-4" src="/picaroni-website/src/img/Penguin_Magallanes.jpg" alt="Penguin see another Penguin">
+        <img class="w-full h-56 object-cover rounded-lg mb-4" src="src/img/Penguin_Magallanes.jpg" alt="Penguin see another Penguin">
         <p class="text-xs font-semibold uppercase tracking-wider text-secondary mb-1">Templado · Patagonia</p>
         <h3 class="font-display text-2xl font-medium italic text-primary mb-2">Magallánico</h3>
         <p class="text-sm text-slate-500 mb-4">Madrigueras y migraciones eternas.</p>
@@ -182,7 +192,7 @@
       </article>
 
       <article class="flex flex-col bg-white border border-slate-200 rounded-xl p-4 shadow-md text-left">
-        <img class="w-full h-56 object-cover rounded-lg mb-4" src="/picaroni-website/src/img/Penguin_Galapagos.jpeg" alt="Penguin on the beach">
+        <img class="w-full h-56 object-cover rounded-lg mb-4" src="src/img/Penguin_Galapagos.jpeg" alt="Penguin on the beach">
         <p class="text-xs font-semibold uppercase tracking-wider text-secondary mb-1">Tropical · Galápagos</p>
         <h3 class="font-display text-2xl font-medium italic text-primary mb-2">De Galápagos</h3>
         <p class="text-sm text-slate-500 mb-4">El único que cruza el ecuador.</p>
@@ -190,7 +200,7 @@
       </article>
 
       <article class="flex flex-col bg-white border border-slate-200 rounded-xl p-4 shadow-md text-left">
-        <img class="w-full h-56 object-cover rounded-lg mb-4" src="/picaroni-website/src/img/African_Penguin.jpg" alt="Penguin looking at the camera">
+        <img class="w-full h-56 object-cover rounded-lg mb-4" src="src/img/African_Penguin.jpg" alt="Penguin looking at the camera">
         <p class="text-xs font-semibold uppercase tracking-wider text-secondary mb-1">Cálido · Sudáfrica</p>
         <h3 class="font-display text-2xl font-medium italic text-primary mb-2">Africano</h3>
         <p class="text-sm text-slate-500 mb-4">El burro del mar: rebuzna para llamar.</p>
@@ -239,7 +249,7 @@
             <li><a href="index.html" class="hover:text-white transition-colors">Inicio</a></li>
             <li><a href="pages/pinguinos.html" class="hover:text-white transition-colors">Pingüinos</a></li>
             <li><a href="pages/nosotros.html" class="hover:text-white transition-colors">Nosotros</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Souvenirs</a></li>
+            <li><a href="pages/souvenirs.html" class="hover:text-white transition-colors">Souvenirs</a></li>
             <li><a href="pages/voluntariado.html" class="hover:text-white transition-colors">Voluntariado</a></li>
           </ul>
         </div>
@@ -247,9 +257,9 @@
           <span class="block text-xs font-bold uppercase tracking-widest text-accent mb-3">Ayudar</span>
           <ul class="space-y-2 text-sm">
             <li><a href="pages/donar.html" class="hover:text-white transition-colors">Donar</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Evidencia</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Transparencia</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Empresas</a></li>
+            <li><a href="pages/evidencia.html" class="hover:text-white transition-colors">Evidencia</a></li>
+            <li><a href="pages/transparencia.html" class="hover:text-white transition-colors">Transparencia</a></li>
+            <li><a href="pages/empresas.html" class="hover:text-white transition-colors">Empresas</a></li>
           </ul>
         </div>
       </div>
@@ -285,8 +295,9 @@
     menuBtn.setAttribute('aria-expanded', String(!isExpanded));
   });
 </script>
+
 <script>
-  // Easter egg: 3 clics rápidos sobre la foto muestran "EMMANUEL"
+  // Easter egg: 3 clics rápidos sobre la foto muestran "EMANUEL"
   // en pantalla completa durante 3 segundos.
   (function () {
     const foto = document.querySelector('[data-easter-egg]');
@@ -334,6 +345,26 @@
       }, 3000);
     }
   })();
+
+  // Tema claro / oscuro
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById('theme-toggle');
+
+    function actualizar() {
+      btn.textContent = root.getAttribute('data-theme') === 'dark' ? 'Modo claro' : 'Modo oscuro';
+    }
+
+    actualizar();
+
+    btn.addEventListener('click', function () {
+      var siguiente = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', siguiente);
+      try { localStorage.setItem('theme', siguiente); } catch (e) {}
+      actualizar();
+    });
+  })();
 </script>
+
 </body>
 </html>
