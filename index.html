@@ -166,7 +166,7 @@
     <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
 
       <article class="flex flex-col bg-white border border-slate-200 rounded-xl p-4 shadow-md text-left">
-        <img class="w-full h-56 object-cover rounded-lg mb-4" src="/picaroni-website/src/img/Penguin_emperor.jpg" alt="Penguin with your family">
+        <img data-easter-egg class="w-full h-56 object-cover rounded-lg mb-4" src="/picaroni-website/src/img/Penguin_emperor.jpg" alt="Penguin with your family">
         <p class="text-xs font-semibold uppercase tracking-wider text-secondary mb-1">Frío · Antártida</p>
         <h3 class="font-display text-2xl font-medium italic text-primary mb-2">Emperador</h3>
         <p class="text-sm text-slate-500 mb-4">El gigante que incuba a −60°C.</p>
@@ -285,6 +285,55 @@
     menuBtn.setAttribute('aria-expanded', String(!isExpanded));
   });
 </script>
+<script>
+  // Easter egg: 3 clics rápidos sobre la foto muestran "EMMANUEL"
+  // en pantalla completa durante 3 segundos.
+  (function () {
+    const foto = document.querySelector('[data-easter-egg]');
+    if (!foto) return;
 
+    let clics = 0;
+    let temporizador = null;
+    let activo = false;
+
+    foto.addEventListener('click', function () {
+      if (activo) return;
+      clics++;
+      clearTimeout(temporizador);
+      // Si pasan más de 600 ms entre clics, el conteo se reinicia
+      temporizador = setTimeout(function () { clics = 0; }, 600);
+
+      if (clics === 3) {
+        clics = 0;
+        mostrar();
+      }
+    });
+
+    function mostrar() {
+      activo = true;
+      const capa = document.createElement('div');
+      capa.textContent = 'EMANUEL';
+      capa.style.cssText = [
+        'position:fixed', 'inset:0', 'z-index:99999',
+        'display:flex', 'align-items:center', 'justify-content:center',
+        'background:rgba(0,0,0,0.9)', 'color:#fff',
+        'font-family:sans-serif', 'font-weight:700',
+        'font-size:clamp(3rem, 14vw, 12rem)', 'letter-spacing:0.05em',
+        'opacity:0', 'transition:opacity 0.3s ease', 'pointer-events:none'
+      ].join(';');
+      document.body.appendChild(capa);
+
+      requestAnimationFrame(function () { capa.style.opacity = '1'; });
+
+      setTimeout(function () {
+        capa.style.opacity = '0';
+        setTimeout(function () {
+          capa.remove();
+          activo = false;
+        }, 300);
+      }, 3000);
+    }
+  })();
+</script>
 </body>
 </html>
