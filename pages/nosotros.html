@@ -6,33 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Penguin Foundation</title>
     <meta name="description" content="Meet the mission, history and team behind the foundation.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link href="../dist/output.css" rel="stylesheet">
 </head>
 
-<body class="bg-slate-900 text-white min-h-screen flex flex-col justify-between">
+<body class="min-h-screen bg-white font-sans text-slate-600 antialiased flex flex-col justify-between">
 
 <!-- Header (igual en todas las páginas; ajustar rutas si cambia la ubicación) -->
-<header class="bg-slate-800 border-b border-slate-700 sticky top-0 z-50">
+<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
     <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between">
 
         <div class="flex items-center justify-between">
-            <a href="../index.html" class="text-xl font-bold text-white">Picaroni</a>
+            <a href="../index.html" class="font-display text-xl font-bold text-primary">Picaroni</a>
 
             <button
                     type="button"
                     id="menu-btn"
                     aria-expanded="false"
-                    class="md:hidden bg-slate-700 hover:bg-slate-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition-colors cursor-pointer">
+                    class="md:hidden rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-primary hover:bg-slate-50 transition-colors cursor-pointer">
                 Menú
             </button>
         </div>
 
-        <nav id="menu" class="hidden md:flex flex-col md:flex-row gap-4 mt-4 md:mt-0 text-sm">
-            <a href="../index.html" class="text-slate-300 hover:text-emerald-400 transition-colors">Inicio</a>
-            <a href="pinguinos.html" class="text-slate-300 hover:text-emerald-400 transition-colors">Pingüinos</a>
-            <a href="nosotros.html" aria-current="page" class="text-emerald-400 transition-colors">Nosotros</a>
-            <a href="#" class="text-slate-300 hover:text-emerald-400 transition-colors">Souvenirs</a>
-            <a href="voluntariado.html" class="text-slate-300 hover:text-emerald-400 transition-colors">Voluntariado</a>
+        <nav id="menu" class="hidden md:flex flex-col md:flex-row md:items-center gap-5 mt-4 md:mt-0 text-sm">
+            <a href="../index.html" class="text-slate-600 hover:text-secondary transition-colors">Inicio</a>
+            <a href="pinguinos.html" class="text-slate-600 hover:text-secondary transition-colors">Pingüinos</a>
+            <a href="nosotros.html" aria-current="page" class="font-semibold text-primary transition-colors">Nosotros</a>
+            <a href="#" class="text-slate-600 hover:text-secondary transition-colors">Souvenirs</a>
+            <a href="voluntariado.html" class="text-slate-600 hover:text-secondary transition-colors">Voluntariado</a>
         </nav>
 
     </div>
@@ -42,56 +47,56 @@
 
     <!-- Título y misión -->
     <section class="py-16 px-6 max-w-3xl mx-auto">
-        <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-8 text-center">Nosotros</h1>
+        <h1 class="font-display text-5xl md:text-6xl font-medium tracking-tight text-primary mb-8 text-center">Nosotros</h1>
 
-        <h2 class="text-2xl font-semibold text-white mb-4">Nuestra misión</h2>
-        <p class="text-lg text-slate-300 leading-relaxed">
+        <h2 class="font-display text-2xl font-medium text-primary mb-4">Nuestra misión</h2>
+        <p class="text-lg font-light text-slate-500 leading-relaxed">
             Protegemos a los pingüinos en todos los climas: atendemos a los animales heridos o enfermos,
             conservamos sus hábitats y convocamos a voluntarios que aprendan y colaboren con nosotros.
         </p>
     </section>
 
     <!-- Valores -->
-    <section class="bg-[#29445D] text-white py-16">
-        <div class="max-w-6xl mx-auto px-6">
+    <section class="bg-mist py-16 px-6">
+        <div class="max-w-6xl mx-auto">
 
-            <h2 class="text-3xl font-semibold text-center mb-12">Nuestros valores</h2>
+            <h2 class="font-display text-3xl font-medium text-primary text-center mb-12">Nuestros valores</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-                <article class="border border-[#527087] bg-[#1c3347] p-8 rounded-xl flex flex-col justify-between">
+                <article class="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-8 shadow-md">
                     <div>
-                        <p class="text-[#91B9C8] text-xs tracking-wider mb-4 font-medium">01 · Transparencia radical</p>
-                        <h3 class="text-xl font-medium text-white mb-4">Transparencia Radical</h3>
-                        <p class="text-white text-lg italic leading-relaxed mb-6">
+                        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-secondary mb-4">01 · Transparencia radical</p>
+                        <h3 class="font-display text-xl font-medium text-primary mb-4">Transparencia Radical</h3>
+                        <p class="font-display text-lg italic text-primary leading-relaxed mb-6">
                             "Si no se puede mostrar, no se puede pedir."
                         </p>
                     </div>
                     <div>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        <p class="text-sm font-light text-slate-500 leading-relaxed mb-6">
                             Publicamos fotos, testigos y el flujo de cada recurso en un dashboard abierto para empresas y personas.
                             Cada aporte puede rastrearse hasta su destino.
                         </p>
-                        <a href="transparencia.html" class="inline-block bg-white text-[#29445D] px-5 py-2.5 text-xs font-semibold tracking-wider hover:bg-[#91B9C8] transition-colors rounded">
+                        <a href="transparencia.html" class="inline-block rounded-md bg-primary px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-secondary transition-colors">
                             Ver transparencia
                         </a>
                     </div>
                 </article>
 
-                <article class="border border-[#527087] bg-[#1c3347] p-8 rounded-xl flex flex-col justify-between">
+                <article class="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-8 shadow-md">
                     <div>
-                        <p class="text-[#91B9C8] text-xs tracking-wider mb-4 font-medium">02 · Bienestar primero</p>
-                        <h3 class="text-xl font-medium text-white mb-4">Bienestar Primero</h3>
-                        <p class="text-white text-lg italic leading-relaxed mb-6">
+                        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-secondary mb-4">02 · Bienestar primero</p>
+                        <h3 class="font-display text-xl font-medium text-primary mb-4">Bienestar Primero</h3>
+                        <p class="font-display text-lg italic text-primary leading-relaxed mb-6">
                             "Nunca un destino turístico. Siempre un hospital."
                         </p>
                     </div>
                     <div>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        <p class="text-sm font-light text-slate-500 leading-relaxed mb-6">
                             Grupos reducidos, pocas fechas al año y acompañamiento veterinario estricto.
                             El pingüino manda; el visitante aprende.
                         </p>
-                        <a href="voluntariado.html" class="inline-block bg-white text-[#29445D] px-5 py-2.5 text-xs font-semibold tracking-wider hover:bg-[#91B9C8] transition-colors rounded">
+                        <a href="voluntariado.html" class="inline-block rounded-md bg-primary px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-secondary transition-colors">
                             Lo que hacemos
                         </a>
                     </div>
@@ -103,12 +108,12 @@
 
     <!-- Quiénes nos impulsan -->
     <section class="py-16 px-6 max-w-3xl mx-auto">
-        <h2 class="text-3xl font-semibold text-white mb-6">Quiénes nos impulsan</h2>
-        <p class="text-lg text-slate-300 leading-relaxed mb-6">
+        <h2 class="font-display text-3xl font-medium text-primary mb-6">Quiénes nos impulsan</h2>
+        <p class="text-lg font-light text-slate-500 leading-relaxed mb-6">
             Un grupo de desarrolladores de software financia las clínicas móviles y el sitio web de la fundación.
             Su aporte permite que la atención veterinaria llegue a más colonias.
         </p>
-        <a href="transparencia.html" class="inline-block rounded-lg border border-slate-600 bg-slate-800 px-6 py-3 font-bold text-white hover:bg-slate-700 transition-colors">
+        <a href="transparencia.html" class="inline-block rounded-md bg-primary px-6 py-3 text-sm font-bold uppercase tracking-wider text-white hover:bg-secondary transition-colors">
             Ver en transparencia
         </a>
     </section>
@@ -116,51 +121,51 @@
 </main>
 
 <!-- Footer (igual en todas las páginas; ajustar rutas si cambia la ubicación) -->
-<footer class="bg-slate-800 border-t border-slate-700 text-slate-300 py-10 px-6 mt-auto">
+<footer class="bg-primary border-t border-white/10 text-slate-300 py-14 px-6 mt-auto">
     <div class="max-w-6xl mx-auto space-y-8">
 
         <div class="grid gap-8 md:grid-cols-3">
             <div class="space-y-3">
-                <span class="text-xl font-bold text-white">Picaroni</span>
+                <span class="font-display text-xl font-bold text-white">Picaroni</span>
                 <p class="text-sm text-slate-400">Cuidamos cada pingüino, en cada clima.</p>
             </div>
 
             <div class="grid grid-cols-2 gap-4">
                 <div>
-                    <span class="block font-semibold text-white mb-2">Explorar</span>
-                    <ul class="space-y-1 text-sm">
-                        <li><a href="../index.html" class="hover:text-emerald-400">Inicio</a></li>
-                        <li><a href="pinguinos.html" class="hover:text-emerald-400">Pingüinos</a></li>
-                        <li><a href="nosotros.html" class="hover:text-emerald-400">Nosotros</a></li>
-                        <li><a href="#" class="hover:text-emerald-400">Souvenirs</a></li>
-                        <li><a href="voluntariado.html" class="hover:text-emerald-400">Voluntariado</a></li>
+                    <span class="block text-xs font-bold uppercase tracking-widest text-accent mb-3">Explorar</span>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../index.html" class="hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="pinguinos.html" class="hover:text-white transition-colors">Pingüinos</a></li>
+                        <li><a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Souvenirs</a></li>
+                        <li><a href="voluntariado.html" class="hover:text-white transition-colors">Voluntariado</a></li>
                     </ul>
                 </div>
                 <div>
-                    <span class="block font-semibold text-white mb-2">Ayudar</span>
-                    <ul class="space-y-1 text-sm">
-                        <li><a href="donar.html" class="hover:text-emerald-400">Donar</a></li>
-                        <li><a href="evidencia.html" class="hover:text-emerald-400">Evidencia</a></li>
-                        <li><a href="transparencia.html" class="hover:text-emerald-400">Transparencia</a></li>
-                        <li><a href="#" class="hover:text-emerald-400">Empresas</a></li>
+                    <span class="block text-xs font-bold uppercase tracking-widest text-accent mb-3">Ayudar</span>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="donar.html" class="hover:text-white transition-colors">Donar</a></li>
+                        <li><a href="evidencia.html" class="hover:text-white transition-colors">Evidencia</a></li>
+                        <li><a href="transparencia.html" class="hover:text-white transition-colors">Transparencia</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Empresas</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="space-y-3">
-                <span class="block font-semibold text-white">Boletín</span>
+                <span class="block text-xs font-bold uppercase tracking-widest text-accent">Boletín</span>
                 <form action="#" method="POST" class="space-y-2">
                     <div>
                         <label for="email" class="block text-sm font-medium text-slate-300">Carta polar · 1 email al mes</label>
                         <small class="block text-xs text-slate-400">Rescates, expediciones y resultados. Sin spam.</small>
                     </div>
-                    <input type="email" id="email" name="email" required placeholder="tu@correo.com" class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-emerald-500">
-                    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors">Unirse</button>
+                    <input type="email" id="email" name="email" required placeholder="tu@correo.com" class="w-full rounded-md border border-slate-600 bg-white/5 px-3 py-2.5 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-accent">
+                    <button type="submit" class="w-full rounded-md bg-accent hover:bg-white text-primary text-xs font-bold uppercase tracking-wider py-2.5 px-4 transition-colors">Unirse</button>
                 </form>
             </div>
         </div>
 
-        <div class="border-t border-slate-700 pt-6 text-center text-xs text-slate-500">
+        <div class="border-t border-white/10 pt-6 text-center text-xs text-slate-400">
             <p>© 2026 Picaroni. Todos los aportes se destinan al cuidado y preservación de la especie.</p>
         </div>
 
