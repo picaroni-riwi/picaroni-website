@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validación Tailwind v4</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="dist/output.css" rel="stylesheet">
+</head>
+
+<body class="min-h-screen bg-white font-sans text-slate-600 antialiased flex flex-col justify-between">
+
+<!-- Header responsive (Issue: Menú móvil) -->
+<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col xl:flex-row xl:items-center xl:justify-between">
+
+    <div class="flex items-center justify-between gap-3">
+      <a href="index.html" class="font-display text-xl font-bold text-primary">Picaroni</a>
+      <div class="flex items-center gap-2">
+        <button type="button" id="theme-toggle" class="rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-primary hover:bg-slate-50 transition-colors cursor-pointer">Modo oscuro</button>
+        <button type="button" id="menu-btn" aria-expanded="false" aria-controls="menu" class="xl:hidden rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-primary hover:bg-slate-50 transition-colors cursor-pointer">Menú</button>
+      </div>
+    </div>
+
+    <nav id="menu" aria-label="Principal" class="hidden xl:block mt-4 xl:mt-0 border-t border-slate-200 pt-2 xl:border-0 xl:pt-0">
+      <ul class="flex flex-col text-sm xl:flex-row xl:items-center xl:gap-6">
+        <li><a href="index.html" class="block py-2 font-semibold text-primary xl:py-0" aria-current="page">Inicio</a></li>
+        <li><a href="pages/pinguinos.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Pingüinos</a></li>
+        <li><a href="pages/nosotros.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Nosotros</a></li>
+        <li><a href="pages/souvenirs.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Souvenirs</a></li>
+        <li><a href="pages/voluntariado.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Voluntariado</a></li>
+        <li><a href="pages/evidencia.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Evidencia</a></li>
+        <li><a href="pages/transparencia.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Transparencia</a></li>
+        <li><a href="pages/empresas.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Empresas</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+  <!-- Sección: Hero -->
+  <section class="py-16 text-center max-w-4xl mx-auto px-6">
+    <h1 class="font-display text-5xl md:text-6xl font-medium tracking-tight leading-tight text-primary mb-6">
+      Cuidamos cada pingüino, en cada clima.
+    </h1>
+    <p class="text-lg font-light text-slate-500 leading-relaxed mb-8 max-w-2xl mx-auto">
+      Somos una fundación dedicada a la atención veterinaria, protección de hábitats y programas de voluntariado para la conservación de los pingüinos.
+    </p>
+    <div class="flex flex-col gap-4 sm:flex-row justify-center">
+      <a href="pages/donar.html" class="inline-block rounded-md bg-brand px-7 py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-lg hover:bg-secondary transition-colors">
+        Donar ahora
+      </a>
+      <a href="pages/voluntariado.html" class="inline-block rounded-md border border-slate-300 bg-white px-7 py-3.5 text-sm font-bold uppercase tracking-wider text-primary hover:bg-slate-50 transition-colors">
+        Ser voluntario
+      </a>
+    </div>
+  </section>
+
+  <!-- Sección: Cifras de Impacto -->
+  <section class="bg-mist py-14 px-6 text-center">
+    <div class="grid grid-cols-2 gap-6 md:grid-cols-4 max-w-6xl mx-auto">
+
+      <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
+        <p class="font-display text-4xl font-medium text-primary mb-2">18</p>
+        <p class="text-xs uppercase tracking-widest text-slate-500">Especies protegidas</p>
+      </div>
+
+      <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
+        <p class="font-display text-4xl font-medium text-primary mb-2">6</p>
+        <p class="text-xs uppercase tracking-widest text-slate-500">Hábitats activos</p>
+      </div>
+
+      <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
+        <p class="font-display text-4xl font-medium text-primary mb-2">320</p>
+        <p class="text-xs uppercase tracking-widest text-slate-500">Voluntarios al año</p>
+      </div>
+
+      <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
+        <p class="font-display text-4xl font-medium text-primary mb-2">100%</p>
+        <p class="text-xs uppercase tracking-widest text-slate-500">Fondos verificables</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sección: Nuestros Valores -->
+  <section class="bg-primary text-white py-20">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <div class="text-center mb-12">
+        <p class="text-accent text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+          NUESTROS VALORES
+        </p>
+        <h2 class="font-display text-3xl lg:text-4xl font-medium leading-tight">
+          Pequeños gestos,
+          <span class="italic text-accent">océanos</span> de cambio.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Valor 1 -->
+        <article class="border border-accent/30 bg-white/5 p-8 rounded-xl flex flex-col justify-between">
+          <div>
+            <p class="text-accent text-xs tracking-wider mb-4 font-medium">
+              01 · Transparencia radical
+            </p>
+            <h3 class="font-display text-xl font-medium text-white mb-4">
+              Transparencia Radical
+            </h3>
+            <p class="text-white text-lg italic leading-relaxed mb-6">
+              "Si no se puede mostrar, no se puede pedir."
+            </p>
+          </div>
+          <div>
+            <p class="text-slate-300 text-xs leading-relaxed mb-6">
+              Publicamos fotos, testigos y el flujo de cada recurso en un dashboard abierto para empresas y personas.
+            </p>
+            <a href="pages/nosotros.html" class="inline-block bg-white text-primary px-5 py-2.5 text-xs font-semibold uppercase tracking-wider hover:bg-accent transition-colors rounded-md">
+              Nuestro compromiso
+            </a>
+          </div>
+        </article>
+
+        <!-- Valor 2 -->
+        <article class="bg-white text-primary p-8 rounded-xl flex flex-col justify-between shadow-2xl">
+          <div>
+            <p class="text-secondary text-xs tracking-wider mb-4 font-medium">
+              02 · Bienestar primero
+            </p>
+            <h3 class="font-display text-xl font-medium text-primary mb-4">
+              Bienestar Primero
+            </h3>
+            <p class="text-primary text-lg italic leading-relaxed mb-6">
+              "Nunca un destino turístico. Siempre un hospital."
+            </p>
+          </div>
+          <div>
+            <p class="text-slate-500 text-xs leading-relaxed mb-6">
+              Grupos reducidos, pocas fechas al año y acompañamiento veterinario estricto. El pingüino manda; el visitante aprende.
+            </p>
+            <a href="pages/voluntariado.html" class="inline-block bg-primary text-white px-5 py-2.5 text-xs font-semibold uppercase tracking-wider hover:bg-secondary transition-colors rounded-md">
+              Lo que hacemos
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sección: Hábitats que protegemos -->
+  <section class="bg-mist py-20 px-6 text-center">
+    <h2 class="font-display text-4xl font-medium text-primary mb-10">Hábitats que protegemos</h2>
+    <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
+
+      <article class="flex flex-col bg-white border border-slate-200 rounded-xl p-4 shadow-md text-left">
+        <img data-easter-egg class="w-full h-56 object-cover rounded-lg mb-4" src="assets/images/Penguin_emperor.jpg" alt="Penguin with your family">
+        <p class="text-xs font-semibold uppercase tracking-wider text-secondary mb-1">Frío · Antártida</p>
+        <h3 class="font-display text-2xl font-medium italic text-primary mb-2">Emperador</h3>
+        <p class="text-sm text-slate-500 mb-4">El gigante que incuba a −60°C.</p>
+        <a href="pages/pinguinos.html" class="bg-primary hover:bg-secondary text-white text-xs font-bold uppercase tracking-wider py-2.5 px-4 rounded-md mt-auto text-center transition-colors">Ver ficha</a>
+      </article>
+
+      <article class="flex flex-col bg-white border border-slate-200 rounded-xl p-4 shadow-md text-left">
+        <img class="w-full h-56 object-cover rounded-lg mb-4" src="assets/images/Penguin_magallanes.jpg" alt="Penguin see another Penguin">
+        <p class="text-xs font-semibold uppercase tracking-wider text-secondary mb-1">Templado · Patagonia</p>
+        <h3 class="font-display text-2xl font-medium italic text-primary mb-2">Magallánico</h3>
+        <p class="text-sm text-slate-500 mb-4">Madrigueras y migraciones eternas.</p>
+        <a href="pages/pinguinos.html" class="bg-primary hover:bg-secondary text-white text-xs font-bold uppercase tracking-wider py-2.5 px-4 rounded-md mt-auto text-center transition-colors">Ver ficha</a>
+      </article>
+
+      <article class="flex flex-col bg-white border border-slate-200 rounded-xl p-4 shadow-md text-left">
+        <img class="w-full h-56 object-cover rounded-lg mb-4" src="assets/images/Penguin_Galapagos.jpeg" alt="Penguin on the beach">
+        <p class="text-xs font-semibold uppercase tracking-wider text-secondary mb-1">Tropical · Galápagos</p>
+        <h3 class="font-display text-2xl font-medium italic text-primary mb-2">De Galápagos</h3>
+        <p class="text-sm text-slate-500 mb-4">El único que cruza el ecuador.</p>
+        <a href="pages/pinguinos.html" class="bg-primary hover:bg-secondary text-white text-xs font-bold uppercase tracking-wider py-2.5 px-4 rounded-md mt-auto text-center transition-colors">Ver ficha</a>
+      </article>
+
+      <article class="flex flex-col bg-white border border-slate-200 rounded-xl p-4 shadow-md text-left">
+        <img class="w-full h-56 object-cover rounded-lg mb-4" src="assets/images/African_Penguin.jpg" alt="Penguin looking at the camera">
+        <p class="text-xs font-semibold uppercase tracking-wider text-secondary mb-1">Cálido · Sudáfrica</p>
+        <h3 class="font-display text-2xl font-medium italic text-primary mb-2">Africano</h3>
+        <p class="text-sm text-slate-500 mb-4">El burro del mar: rebuzna para llamar.</p>
+        <a href="pages/pinguinos.html" class="bg-primary hover:bg-secondary text-white text-xs font-bold uppercase tracking-wider py-2.5 px-4 rounded-md mt-auto text-center transition-colors">Ver ficha</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Sección: Testimonio (Nuevo Issue) -->
+  <section class="bg-primary px-6 py-20 text-center text-white space-y-6">
+    <p class="text-accent text-xl tracking-wider" role="img" aria-label="5 de 5 estrellas">★★★★★</p>
+
+    <blockquote class="font-display text-3xl md:text-4xl font-medium italic text-white leading-snug max-w-3xl mx-auto">
+      "Volví distinta. Ellos me salvaron a mí."
+      <footer class="text-sm font-normal not-italic text-slate-300 mt-4">
+        Marina, voluntaria Patagonia 2025. Liberó 14 pichones junto a veterinarios de la fundación.
+      </footer>
+    </blockquote>
+
+    <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+      <a href="pages/donar.html" class="bg-white hover:bg-accent text-primary text-xs font-bold uppercase tracking-wider py-3 px-7 rounded-md transition-colors">
+        Quiero ayudar hoy
+      </a>
+      <a href="pages/evidencia.html" class="border border-white/40 hover:bg-white/10 text-white text-xs font-bold uppercase tracking-wider py-3 px-7 rounded-md transition-colors">
+        Ver resultados
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-primary border-t border-white/10 text-slate-300 py-14 px-6 mt-auto">
+  <div class="max-w-6xl mx-auto space-y-8">
+
+    <div class="grid gap-8 md:grid-cols-3">
+      <div class="space-y-3">
+        <span class="font-display text-xl font-bold text-white">Picaroni</span>
+        <p class="text-sm text-slate-400">Cuidamos cada pingüino, en cada clima.</p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <span class="block text-xs font-bold uppercase tracking-widest text-accent mb-3">Explorar</span>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html" class="hover:text-white transition-colors">Inicio</a></li>
+            <li><a href="pages/pinguinos.html" class="hover:text-white transition-colors">Pingüinos</a></li>
+            <li><a href="pages/nosotros.html" class="hover:text-white transition-colors">Nosotros</a></li>
+            <li><a href="pages/souvenirs.html" class="hover:text-white transition-colors">Souvenirs</a></li>
+            <li><a href="pages/voluntariado.html" class="hover:text-white transition-colors">Voluntariado</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="block text-xs font-bold uppercase tracking-widest text-accent mb-3">Ayudar</span>
+          <ul class="space-y-2 text-sm">
+            <li><a href="pages/donar.html" class="hover:text-white transition-colors">Donar</a></li>
+            <li><a href="pages/evidencia.html" class="hover:text-white transition-colors">Evidencia</a></li>
+            <li><a href="pages/transparencia.html" class="hover:text-white transition-colors">Transparencia</a></li>
+            <li><a href="pages/empresas.html" class="hover:text-white transition-colors">Empresas</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <span class="block text-xs font-bold uppercase tracking-widest text-accent">Boletín</span>
+        <form action="#" method="POST" class="space-y-2">
+          <div>
+            <label for="email" class="block text-sm font-medium text-slate-300">Carta polar · 1 email al mes</label>
+            <small class="block text-xs text-slate-400">Rescates, expediciones y resultados. Sin spam.</small>
+          </div>
+          <input type="email" id="email" name="email" required placeholder="tu@correo.com" class="w-full px-3 py-2.5 bg-white/5 border border-slate-600 rounded-md text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-accent">
+          <button type="submit" class="w-full bg-accent hover:bg-white text-primary text-xs font-bold uppercase tracking-wider py-2.5 px-4 rounded-md transition-colors">Unirse</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 pt-6 text-center text-xs text-slate-400">
+      <p>© 2026 Picaroni. Todos los aportes se destinan al cuidado y preservación de la especie.</p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Script para el menú móvil -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+    const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+    menuBtn.setAttribute('aria-expanded', String(!isExpanded));
+  });
+</script>
+
+<script>
+  // Easter egg: 3 clics rápidos sobre la foto muestran "EMANUEL"
+  // en pantalla completa durante 3 segundos.
+  (function () {
+    const foto = document.querySelector('[data-easter-egg]');
+    if (!foto) return;
+
+    let clics = 0;
+    let temporizador = null;
+    let activo = false;
+
+    foto.addEventListener('click', function () {
+      if (activo) return;
+      clics++;
+      clearTimeout(temporizador);
+      // Si pasan más de 600 ms entre clics, el conteo se reinicia
+      temporizador = setTimeout(function () { clics = 0; }, 600);
+
+      if (clics === 3) {
+        clics = 0;
+        mostrar();
+      }
+    });
+
+    function mostrar() {
+      activo = true;
+      const capa = document.createElement('div');
+      capa.textContent = 'EMANUEL';
+      capa.style.cssText = [
+        'position:fixed', 'inset:0', 'z-index:99999',
+        'display:flex', 'align-items:center', 'justify-content:center',
+        'background:rgba(0,0,0,0.9)', 'color:#fff',
+        'font-family:sans-serif', 'font-weight:700',
+        'font-size:clamp(3rem, 14vw, 12rem)', 'letter-spacing:0.05em',
+        'opacity:0', 'transition:opacity 0.3s ease', 'pointer-events:none'
+      ].join(';');
+      document.body.appendChild(capa);
+
+      requestAnimationFrame(function () { capa.style.opacity = '1'; });
+
+      setTimeout(function () {
+        capa.style.opacity = '0';
+        setTimeout(function () {
+          capa.remove();
+          activo = false;
+        }, 300);
+      }, 3000);
+    }
+  })();
+
+  // Tema claro / oscuro
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById('theme-toggle');
+
+    function actualizar() {
+      btn.textContent = root.getAttribute('data-theme') === 'dark' ? 'Modo claro' : 'Modo oscuro';
+    }
+
+    actualizar();
+
+    btn.addEventListener('click', function () {
+      var siguiente = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', siguiente);
+      try { localStorage.setItem('theme', siguiente); } catch (e) {}
+      actualizar();
+    });
+  })();
+</script>
+
+</body>
+</html>

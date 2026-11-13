@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate | Penguin Foundation</title>
+    <meta name="description" content="Support our work with a donation.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
+    <link href="../dist/output.css" rel="stylesheet">
+</head>
+
+<body class="min-h-screen bg-white font-sans text-slate-600 antialiased flex flex-col justify-between">
+
+<!-- Header (igual en todas las páginas; ajustar rutas si cambia la ubicación) -->
+<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col xl:flex-row xl:items-center xl:justify-between">
+
+        <div class="flex items-center justify-between gap-3">
+            <a href="../index.html" class="font-display text-xl font-bold text-primary">Picaroni</a>
+            <div class="flex items-center gap-2">
+                <button type="button" id="theme-toggle" class="rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-primary hover:bg-slate-50 transition-colors cursor-pointer">Modo oscuro</button>
+                <button type="button" id="menu-btn" aria-expanded="false" aria-controls="menu" class="xl:hidden rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-primary hover:bg-slate-50 transition-colors cursor-pointer">Menú</button>
+            </div>
+        </div>
+
+        <nav id="menu" aria-label="Principal" class="hidden xl:block mt-4 xl:mt-0 border-t border-slate-200 pt-2 xl:border-0 xl:pt-0">
+            <ul class="flex flex-col text-sm xl:flex-row xl:items-center xl:gap-6">
+                <li><a href="../index.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Inicio</a></li>
+                <li><a href="pinguinos.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Pingüinos</a></li>
+                <li><a href="nosotros.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Nosotros</a></li>
+                <li><a href="souvenirs.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Souvenirs</a></li>
+                <li><a href="voluntariado.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Voluntariado</a></li>
+                <li><a href="evidencia.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Evidencia</a></li>
+                <li><a href="transparencia.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Transparencia</a></li>
+                <li><a href="empresas.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Empresas</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+<main>
+
+    <section class="py-16 px-6 max-w-3xl mx-auto text-center">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-secondary mb-3">DONACIONES DIRECTAS</p>
+        <h1 class="font-display text-5xl md:text-6xl font-medium tracking-tight text-primary mb-6">Donar</h1>
+        <p class="text-lg font-light text-slate-500 leading-relaxed">
+            Anónimas o con nombre. Elige cuánto aportar y a qué destino irá. El 100% de los aportes se destina al cuidado y la preservación de la especie.
+        </p>
+    </section>
+
+    <section class="pb-20 px-6 max-w-2xl mx-auto">
+        <form action="#" method="post" class="space-y-10 rounded-xl border border-slate-200 bg-white p-6 md:p-8 shadow-lg">
+
+            <!-- Tipo de donación -->
+            <fieldset class="space-y-4">
+                <legend class="mb-3 text-xs font-bold uppercase tracking-widest text-slate-500">Elige cómo quieres donar</legend>
+
+                <div class="grid gap-3 md:grid-cols-3">
+
+                    <div class="relative">
+                        <input type="radio" id="donacion-unica" name="tipo-donacion" value="unica" class="peer sr-only" checked>
+                        <label for="donacion-unica" class="block h-full cursor-pointer rounded-md border border-slate-300 bg-white p-4 text-primary transition-colors hover:border-secondary peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-secondary">
+                            <span class="block text-xs opacity-70 mb-1">Una vez</span>
+                            <span class="block text-sm font-bold uppercase tracking-wider mb-1">Única</span>
+                            <span class="block text-xs opacity-80">Haces un aporte puntual para una necesidad concreta.</span>
+                        </label>
+                    </div>
+
+                    <div class="relative">
+                        <input type="radio" id="donacion-mensual" name="tipo-donacion" value="mensual" class="peer sr-only">
+                        <label for="donacion-mensual" class="block h-full cursor-pointer rounded-md border border-slate-300 bg-white p-4 text-primary transition-colors hover:border-secondary peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-secondary">
+                            <span class="block text-xs opacity-70 mb-1">Cada mes</span>
+                            <span class="block text-sm font-bold uppercase tracking-wider mb-1">Mensual</span>
+                            <span class="block text-xs opacity-80">Un apoyo constante que nos permite planificar el trabajo a largo plazo.</span>
+                        </label>
+                    </div>
+
+                    <div class="relative">
+                        <input type="radio" id="donacion-anonima" name="tipo-donacion" value="anonima" class="peer sr-only">
+                        <label for="donacion-anonima" class="block h-full cursor-pointer rounded-md border border-slate-300 bg-white p-4 text-primary transition-colors hover:border-secondary peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-secondary">
+                            <span class="block text-xs opacity-70 mb-1">Sin tu nombre</span>
+                            <span class="block text-sm font-bold uppercase tracking-wider mb-1">Anónima</span>
+                            <span class="block text-xs opacity-80">Ayudas sin que tu nombre aparezca en nuestros registros públicos.</span>
+                        </label>
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <!-- Monto -->
+            <fieldset class="space-y-4">
+                <legend class="mb-3 text-xs font-bold uppercase tracking-widest text-slate-500">Elige el monto</legend>
+
+                <div class="grid grid-cols-4 gap-3">
+                    <button type="button" data-monto="10" aria-pressed="false" class="monto-btn rounded-md border border-slate-300 bg-white py-4 text-lg text-primary transition-colors hover:border-secondary">10 €</button>
+                    <button type="button" data-monto="25" aria-pressed="true" class="monto-btn rounded-md border border-primary ring-1 ring-primary bg-white py-4 text-lg font-bold text-primary transition-colors hover:border-secondary">25 €</button>
+                    <button type="button" data-monto="50" aria-pressed="false" class="monto-btn rounded-md border border-slate-300 bg-white py-4 text-lg text-primary transition-colors hover:border-secondary">50 €</button>
+                    <button type="button" data-monto="100" aria-pressed="false" class="monto-btn rounded-md border border-slate-300 bg-white py-4 text-lg text-primary transition-colors hover:border-secondary">100 €</button>
+                </div>
+
+                <div class="space-y-2">
+                    <label for="monto-otro" class="block text-sm font-medium text-slate-600">Otro monto</label>
+                    <input type="number" id="monto-otro" min="1" step="1" value="25" placeholder="0" class="w-full rounded-md border border-slate-300 bg-white px-3 py-3 text-primary placeholder:text-slate-400 focus:outline-none focus:border-secondary">
+                </div>
+
+                <!-- Valor que se envía con el formulario -->
+                <input type="hidden" id="monto" name="monto" value="25">
+            </fieldset>
+
+            <!-- Destino -->
+            <fieldset class="space-y-4">
+                <legend class="mb-3 text-xs font-bold uppercase tracking-widest text-slate-500">Elige el destino</legend>
+
+                <div class="grid gap-3 md:grid-cols-3">
+
+                    <div class="relative">
+                        <input type="radio" id="destino-alimento" name="destino" value="alimento" class="peer sr-only" checked>
+                        <label for="destino-alimento" class="block h-full cursor-pointer rounded-md border border-slate-300 bg-white p-4 text-primary transition-colors hover:border-secondary peer-checked:border-primary peer-checked:ring-1 peer-checked:ring-primary peer-focus-visible:ring-2 peer-focus-visible:ring-secondary">
+                            <span class="block text-sm font-bold uppercase tracking-wider mb-1">Alimento</span>
+                            <span class="block text-xs text-slate-500">Comida para las colonias y los animales en recuperación.</span>
+                        </label>
+                    </div>
+
+                    <div class="relative">
+                        <input type="radio" id="destino-clinica" name="destino" value="clinica" class="peer sr-only">
+                        <label for="destino-clinica" class="block h-full cursor-pointer rounded-md border border-slate-300 bg-white p-4 text-primary transition-colors hover:border-secondary peer-checked:border-primary peer-checked:ring-1 peer-checked:ring-primary peer-focus-visible:ring-2 peer-focus-visible:ring-secondary">
+                            <span class="block text-sm font-bold uppercase tracking-wider mb-1">Clínica</span>
+                            <span class="block text-xs text-slate-500">Atención veterinaria y medicinas para los pingüinos.</span>
+                        </label>
+                    </div>
+
+                    <div class="relative">
+                        <input type="radio" id="destino-habitat" name="destino" value="habitat" class="peer sr-only">
+                        <label for="destino-habitat" class="block h-full cursor-pointer rounded-md border border-slate-300 bg-white p-4 text-primary transition-colors hover:border-secondary peer-checked:border-primary peer-checked:ring-1 peer-checked:ring-primary peer-focus-visible:ring-2 peer-focus-visible:ring-secondary">
+                            <span class="block text-sm font-bold uppercase tracking-wider mb-1">Hábitat</span>
+                            <span class="block text-xs text-slate-500">Protección del lugar donde viven las colonias.</span>
+                        </label>
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <div class="text-center">
+                <button type="submit" class="w-full rounded-md bg-primary py-4 text-sm font-bold uppercase tracking-wider text-white shadow-md hover:bg-secondary transition-colors">
+                    Continuar
+                </button>
+                <p class="mt-4 text-xs text-slate-500">Todo lo que aportas se destina al cuidado de la especie. <a href="transparencia.html" class="underline hover:text-secondary">Ver flujo de fondos</a></p>
+            </div>
+
+        </form>
+    </section>
+
+</main>
+
+<!-- Footer (igual en todas las páginas; ajustar rutas si cambia la ubicación) -->
+<footer class="bg-primary border-t border-white/10 text-slate-300 py-14 px-6 mt-auto">
+    <div class="max-w-6xl mx-auto space-y-8">
+
+        <div class="grid gap-8 md:grid-cols-3">
+            <div class="space-y-3">
+                <span class="font-display text-xl font-bold text-white">Picaroni</span>
+                <p class="text-sm text-slate-400">Cuidamos cada pingüino, en cada clima.</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <span class="block text-xs font-bold uppercase tracking-widest text-accent mb-3">Explorar</span>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../index.html" class="hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="pinguinos.html" class="hover:text-white transition-colors">Pingüinos</a></li>
+                        <li><a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a></li>
+                        <li><a href="souvenirs.html" class="hover:text-white transition-colors">Souvenirs</a></li>
+                        <li><a href="voluntariado.html" class="hover:text-white transition-colors">Voluntariado</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <span class="block text-xs font-bold uppercase tracking-widest text-accent mb-3">Ayudar</span>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="donar.html" class="hover:text-white transition-colors">Donar</a></li>
+                        <li><a href="evidencia.html" class="hover:text-white transition-colors">Evidencia</a></li>
+                        <li><a href="transparencia.html" class="hover:text-white transition-colors">Transparencia</a></li>
+                        <li><a href="empresas.html" class="hover:text-white transition-colors">Empresas</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="space-y-3">
+                <span class="block text-xs font-bold uppercase tracking-widest text-accent">Boletín</span>
+                <form action="#" method="POST" class="space-y-2">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-slate-300">Carta polar · 1 email al mes</label>
+                        <small class="block text-xs text-slate-400">Rescates, expediciones y resultados. Sin spam.</small>
+                    </div>
+                    <input type="email" id="email" name="email" required placeholder="tu@correo.com" class="w-full rounded-md border border-slate-600 bg-white/5 px-3 py-2.5 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-accent">
+                    <button type="submit" class="w-full rounded-md bg-accent hover:bg-white text-primary text-xs font-bold uppercase tracking-wider py-2.5 px-4 transition-colors">Unirse</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-6 text-center text-xs text-slate-400">
+            <p>© 2026 Picaroni. Todos los aportes se destinan al cuidado y preservación de la especie.</p>
+        </div>
+
+    </div>
+</footer>
+
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+
+    menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', String(!isExpanded));
+    });
+
+    // Selector de montos
+    const montoBtns = document.querySelectorAll('.monto-btn');
+    const montoOtro = document.getElementById('monto-otro');
+    const montoFinal = document.getElementById('monto');
+
+    function marcarBoton(seleccionado) {
+        montoBtns.forEach(btn => {
+            const activo = btn === seleccionado;
+            btn.classList.toggle('border-primary', activo);
+            btn.classList.toggle('ring-1', activo);
+            btn.classList.toggle('ring-primary', activo);
+            btn.classList.toggle('font-bold', activo);
+            btn.classList.toggle('border-slate-300', !activo);
+            btn.setAttribute('aria-pressed', String(activo));
+        });
+    }
+
+    montoBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const valor = btn.dataset.monto;
+            marcarBoton(btn);
+            montoOtro.value = valor;
+            montoFinal.value = valor;
+        });
+    });
+
+    montoOtro.addEventListener('input', () => {
+        marcarBoton(null);
+        montoFinal.value = montoOtro.value;
+    });
+</script>
+<script>
+    (function () {
+        var root = document.documentElement;
+        var btn = document.getElementById('theme-toggle');
+
+        function actualizar() {
+            btn.textContent = root.getAttribute('data-theme') === 'dark' ? 'Modo claro' : 'Modo oscuro';
+        }
+
+        actualizar();
+
+        btn.addEventListener('click', function () {
+            var siguiente = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            root.setAttribute('data-theme', siguiente);
+            try { localStorage.setItem('theme', siguiente); } catch (e) {}
+            actualizar();
+        });
+    })();
+</script>
+</body>
+</html>

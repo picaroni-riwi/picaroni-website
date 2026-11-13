@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penguins | Penguin Foundation</title>
+  <meta name="description" content="Discover the penguin species of each habitat we protect.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="../dist/output.css" rel="stylesheet">
+</head>
+
+<body class="min-h-screen bg-white font-sans text-slate-600 antialiased flex flex-col justify-between">
+
+<!-- Header (igual en todas las páginas; ajustar rutas si cambia la ubicación) -->
+<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col xl:flex-row xl:items-center xl:justify-between">
+
+    <div class="flex items-center justify-between gap-3">
+      <a href="../index.html" class="font-display text-xl font-bold text-primary">Picaroni</a>
+      <div class="flex items-center gap-2">
+        <button type="button" id="theme-toggle" class="rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-primary hover:bg-slate-50 transition-colors cursor-pointer">Modo oscuro</button>
+        <button type="button" id="menu-btn" aria-expanded="false" aria-controls="menu" class="xl:hidden rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-primary hover:bg-slate-50 transition-colors cursor-pointer">Menú</button>
+      </div>
+    </div>
+
+    <nav id="menu" aria-label="Principal" class="hidden xl:block mt-4 xl:mt-0 border-t border-slate-200 pt-2 xl:border-0 xl:pt-0">
+      <ul class="flex flex-col text-sm xl:flex-row xl:items-center xl:gap-6">
+        <li><a href="../index.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Inicio</a></li>
+        <li><a href="pinguinos.html" class="block py-2 font-semibold text-primary xl:py-0" aria-current="page">Pingüinos</a></li>
+        <li><a href="nosotros.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Nosotros</a></li>
+        <li><a href="souvenirs.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Souvenirs</a></li>
+        <li><a href="voluntariado.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Voluntariado</a></li>
+        <li><a href="evidencia.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Evidencia</a></li>
+        <li><a href="transparencia.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Transparencia</a></li>
+        <li><a href="empresas.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Empresas</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+<main>
+
+  <!-- Introducción -->
+  <section class="py-16 px-6 max-w-3xl mx-auto text-center">
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-secondary mb-3">ENCICLOPEDIA VIVA</p>
+    <h1 class="font-display text-5xl md:text-6xl font-medium tracking-tight text-primary mb-6">Pingüinos</h1>
+    <p class="text-lg font-light text-slate-500 leading-relaxed">
+      Elige un hábitat para conocer la especie que vive allí y su estado de conservación.
+    </p>
+  </section>
+
+  <!-- Selector de hábitats y ficha -->
+  <section class="bg-mist py-16 px-6">
+    <div class="max-w-6xl mx-auto grid gap-8 md:grid-cols-[280px_1fr]">
+
+      <!-- Lista de hábitats (los botones se generan desde el arreglo "habitats") -->
+      <div>
+        <h2 class="text-xs font-bold tracking-widest uppercase text-slate-500 mb-4">Hábitats</h2>
+        <ul id="lista-habitats" class="space-y-3"></ul>
+      </div>
+
+      <!-- Ficha de la especie -->
+      <section id="ficha" aria-live="polite" class="rounded-xl bg-white border border-slate-200 shadow-lg p-6 md:p-8">
+        <!-- Se llena con JavaScript -->
+      </section>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer (igual en todas las páginas; ajustar rutas si cambia la ubicación) -->
+<footer class="bg-primary border-t border-white/10 text-slate-300 py-14 px-6 mt-auto">
+  <div class="max-w-6xl mx-auto space-y-8">
+
+    <div class="grid gap-8 md:grid-cols-3">
+      <div class="space-y-3">
+        <span class="font-display text-xl font-bold text-white">Picaroni</span>
+        <p class="text-sm text-slate-400">Cuidamos cada pingüino, en cada clima.</p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <span class="block text-xs font-bold uppercase tracking-widest text-accent mb-3">Explorar</span>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../index.html" class="hover:text-white transition-colors">Inicio</a></li>
+            <li><a href="pinguinos.html" class="hover:text-white transition-colors">Pingüinos</a></li>
+            <li><a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a></li>
+            <li><a href="souvenirs.html" class="hover:text-white transition-colors">Souvenirs</a></li>
+            <li><a href="voluntariado.html" class="hover:text-white transition-colors">Voluntariado</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="block text-xs font-bold uppercase tracking-widest text-accent mb-3">Ayudar</span>
+          <ul class="space-y-2 text-sm">
+            <li><a href="donar.html" class="hover:text-white transition-colors">Donar</a></li>
+            <li><a href="evidencia.html" class="hover:text-white transition-colors">Evidencia</a></li>
+            <li><a href="transparencia.html" class="hover:text-white transition-colors">Transparencia</a></li>
+            <li><a href="empresas.html" class="hover:text-white transition-colors">Empresas</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <span class="block text-xs font-bold uppercase tracking-widest text-accent">Boletín</span>
+        <form action="#" method="POST" class="space-y-2">
+          <div>
+            <label for="email" class="block text-sm font-medium text-slate-300">Carta polar · 1 email al mes</label>
+            <small class="block text-xs text-slate-400">Rescates, expediciones y resultados. Sin spam.</small>
+          </div>
+          <input type="email" id="email" name="email" required placeholder="tu@correo.com" class="w-full rounded-md border border-slate-600 bg-white/5 px-3 py-2.5 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-accent">
+          <button type="submit" class="w-full rounded-md bg-accent hover:bg-white text-primary text-xs font-bold uppercase tracking-wider py-2.5 px-4 transition-colors">Unirse</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 pt-6 text-center text-xs text-slate-400">
+      <p>© 2026 Picaroni. Todos los aportes se destinan al cuidado y preservación de la especie.</p>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  // Menú móvil
+  const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+    const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+    menuBtn.setAttribute('aria-expanded', String(!isExpanded));
+  });
+
+  // Datos de los hábitats.
+  // "estado" está marcado como pendiente: confirmar con el líder antes de publicar.
+  const habitats = [
+    {
+      id: 'antartida',
+      nombre: 'Frío · Antártida',
+      especie: 'Emperador',
+      frase: 'El gigante que incuba a −60°C.',
+      imagen: '../assets/images/Penguin_emperor.jpg',
+      alt: 'Pingüinos emperador en el hielo de la Antártida',
+      estado: 'Pendiente de confirmar'
+    },
+    {
+      id: 'patagonia',
+      nombre: 'Templado · Patagonia',
+      especie: 'Magallánico',
+      frase: 'Madrigueras y migraciones eternas.',
+      imagen: '../assets/images/Penguin_magallanes.jpg',
+      alt: 'Pingüinos magallánicos en la costa de la Patagonia',
+      estado: 'Pendiente de confirmar'
+    },
+    {
+      id: 'galapagos',
+      nombre: 'Tropical · Galápagos',
+      especie: 'De Galápagos',
+      frase: 'El único que cruza el ecuador.',
+      imagen: '../assets/images/Penguin_Galapagos.jpeg',
+      alt: 'Pingüino de Galápagos en la costa tropical',
+      estado: 'Pendiente de confirmar'
+    },
+    {
+      id: 'sudafrica',
+      nombre: 'Cálido · Sudáfrica',
+      especie: 'Africano',
+      frase: 'El burro del mar: rebuzna para llamar.',
+      imagen: '../assets/images/African_Penguin.jpg',
+      alt: 'Pingüino africano mirando a la cámara',
+      estado: 'Pendiente de confirmar'
+    }
+  ];
+
+  const lista = document.getElementById('lista-habitats');
+  const ficha = document.getElementById('ficha');
+
+  const claseBase = 'w-full text-left rounded-md border px-4 py-3 transition-colors cursor-pointer';
+  const claseInactiva = 'border-slate-300 bg-white text-primary hover:border-secondary';
+  const claseActiva = 'border-primary ring-1 ring-primary bg-white text-primary font-bold';
+
+  function mostrarFicha(habitat) {
+    // Sin datos: mensaje de espera
+    if (!habitat || !habitat.especie) {
+      ficha.innerHTML = '<p class="text-slate-500">Pronto más información.</p>';
+      return;
+    }
+
+    ficha.innerHTML = `
+            <img src="${habitat.imagen}" alt="${habitat.alt}" class="mb-6 h-64 w-full rounded-lg object-cover" />
+            <p class="ficha-nombre text-xs font-semibold uppercase tracking-[0.2em] text-secondary mb-2"></p>
+            <h2 class="ficha-especie font-display text-3xl font-medium tracking-tight text-primary mb-2"></h2>
+            <p class="ficha-frase text-slate-500 mb-4"></p>
+            <p class="text-sm text-slate-500">Estado: <span class="ficha-estado inline-block rounded bg-secondary px-2 py-1 text-xs font-bold text-white"></span></p>
+        `;
+    ficha.querySelector('.ficha-nombre').textContent = habitat.nombre;
+    ficha.querySelector('.ficha-especie').textContent = habitat.especie;
+    ficha.querySelector('.ficha-frase').textContent = habitat.frase;
+    ficha.querySelector('.ficha-estado').textContent = habitat.estado;
+  }
+
+  function activar(boton, habitat) {
+    lista.querySelectorAll('button').forEach(btn => {
+      const activo = btn === boton;
+      btn.setAttribute('aria-pressed', String(activo));
+      btn.className = `${claseBase} ${activo ? claseActiva : claseInactiva}`;
+    });
+    mostrarFicha(habitat);
+  }
+
+  // Crear los botones desde el arreglo
+  habitats.forEach((habitat, indice) => {
+    const li = document.createElement('li');
+    const boton = document.createElement('button');
+    boton.type = 'button';
+    boton.textContent = habitat.nombre;
+    boton.setAttribute('aria-pressed', String(indice === 0));
+    boton.className = `${claseBase} ${indice === 0 ? claseActiva : claseInactiva}`;
+
+    boton.addEventListener('click', () => activar(boton, habitat));
+
+    li.appendChild(boton);
+    lista.appendChild(li);
+  });
+
+  // Mostrar el primer hábitat al cargar
+  mostrarFicha(habitats[0]);
+</script>
+<script>
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById('theme-toggle');
+
+    function actualizar() {
+      btn.textContent = root.getAttribute('data-theme') === 'dark' ? 'Modo claro' : 'Modo oscuro';
+    }
+
+    actualizar();
+
+    btn.addEventListener('click', function () {
+      var siguiente = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', siguiente);
+      try { localStorage.setItem('theme', siguiente); } catch (e) {}
+      actualizar();
+    });
+  })();
+</script>
+</body>
+</html>

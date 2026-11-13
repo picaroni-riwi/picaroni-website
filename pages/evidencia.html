@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evidence | Penguin Foundation</title>
+    <meta name="description" content="Field photos and volunteer testimonies showing where every donation goes.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
+    <link href="../dist/output.css" rel="stylesheet">
+</head>
+
+<body class="min-h-screen bg-white font-sans text-slate-600 antialiased flex flex-col justify-between">
+
+<!-- Header (igual en todas las páginas; ajustar rutas si cambia la ubicación) -->
+<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col xl:flex-row xl:items-center xl:justify-between">
+
+        <div class="flex items-center justify-between gap-3">
+            <a href="../index.html" class="font-display text-xl font-bold text-primary">Picaroni</a>
+            <div class="flex items-center gap-2">
+                <button type="button" id="theme-toggle" class="rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-primary hover:bg-slate-50 transition-colors cursor-pointer">Modo oscuro</button>
+                <button type="button" id="menu-btn" aria-expanded="false" aria-controls="menu" class="xl:hidden rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-primary hover:bg-slate-50 transition-colors cursor-pointer">Menú</button>
+            </div>
+        </div>
+
+        <nav id="menu" aria-label="Principal" class="hidden xl:block mt-4 xl:mt-0 border-t border-slate-200 pt-2 xl:border-0 xl:pt-0">
+            <ul class="flex flex-col text-sm xl:flex-row xl:items-center xl:gap-6">
+                <li><a href="../index.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Inicio</a></li>
+                <li><a href="pinguinos.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Pingüinos</a></li>
+                <li><a href="nosotros.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Nosotros</a></li>
+                <li><a href="souvenirs.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Souvenirs</a></li>
+                <li><a href="voluntariado.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Voluntariado</a></li>
+                <li><a href="evidencia.html" class="block py-2 font-semibold text-primary xl:py-0" aria-current="page">Evidencia</a></li>
+                <li><a href="transparencia.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Transparencia</a></li>
+                <li><a href="empresas.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Empresas</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+<main>
+
+    <!-- Introducción -->
+    <section class="py-16 px-6 max-w-3xl mx-auto text-center">
+        <h1 class="font-display text-5xl md:text-6xl font-medium tracking-tight text-primary mb-6">Evidencia</h1>
+        <p class="text-lg font-light text-slate-500 leading-relaxed">
+            Fotos del trabajo de campo y testimonios de quienes han participado. Así puedes ver a dónde llega cada aporte.
+        </p>
+    </section>
+
+    <!-- Galería -->
+    <section class="bg-mist py-16 px-6">
+        <div class="max-w-6xl mx-auto">
+
+            <h2 class="font-display text-3xl font-medium text-primary mb-8 text-center">Trabajo de campo</h2>
+
+            <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
+
+                <figure>
+                    <img src="../assets/images/voluntaria_pinguino.jpg" alt="Voluntaria junto a una cría de pingüino" class="h-56 w-full rounded-xl border border-slate-200 object-cover shadow-md" />
+                </figure>
+
+                <figure>
+                    <img src="../assets/images/veterinario_clinica.jpg" alt="Veterinario revisando a un pingüino en la clínica móvil" class="h-56 w-full rounded-xl border border-slate-200 object-cover shadow-md" />
+                </figure>
+
+                <figure>
+                    <img src="../assets/images/colonia_pinguino.jpg" alt="Colonia de pingüinos emperador en la Antártida" class="h-56 w-full rounded-xl border border-slate-200 object-cover shadow-md" />
+                </figure>
+
+                <figure>
+                    <img src="../assets/images/pichones.jpg" alt="Pichones alimentados en una colonia de la Patagonia" class="h-56 w-full rounded-xl border border-slate-200 object-cover shadow-md" />
+                </figure>
+
+                <figure>
+                    <img src="../assets/images/equipo_voluntario.jpg" alt="Equipo de voluntarios midiendo una colonia en Galápagos" class="h-56 w-full rounded-xl border border-slate-200 object-cover shadow-md" />
+                </figure>
+
+                <figure>
+                    <img src="../assets/images/pinguino_liberado.jpg" alt="Pingüino liberado de regreso al mar" class="h-56 w-full rounded-xl border border-slate-200 object-cover shadow-md" />
+                </figure>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Testimonio -->
+    <section class="py-16 px-6 max-w-3xl mx-auto text-center space-y-6">
+        <p class="text-secondary text-xl tracking-wider" role="img" aria-label="5 de 5 estrellas">★★★★★</p>
+
+        <blockquote class="font-display text-2xl md:text-3xl font-medium italic text-primary leading-relaxed">
+            <p>"Volví distinta. Ellos me salvaron a mí."</p>
+            <footer class="font-sans text-sm font-light not-italic text-slate-500 mt-4">
+                Marina, voluntaria Patagonia 2025. Liberó 14 pichones junto a veterinarios de la fundación.
+            </footer>
+        </blockquote>
+
+        <div class="pt-4">
+            <a href="transparencia.html" class="inline-block rounded-md bg-primary px-6 py-3 text-sm font-bold uppercase tracking-wider text-white hover:bg-secondary transition-colors">Ver flujo de fondos</a>
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer (igual en todas las páginas; ajustar rutas si cambia la ubicación) -->
+<footer class="bg-primary border-t border-white/10 text-slate-300 py-14 px-6 mt-auto">
+    <div class="max-w-6xl mx-auto space-y-8">
+
+        <div class="grid gap-8 md:grid-cols-3">
+            <div class="space-y-3">
+                <span class="font-display text-xl font-bold text-white">Picaroni</span>
+                <p class="text-sm text-slate-400">Cuidamos cada pingüino, en cada clima.</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <span class="block text-xs font-bold uppercase tracking-widest text-accent mb-3">Explorar</span>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../index.html" class="hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="pinguinos.html" class="hover:text-white transition-colors">Pingüinos</a></li>
+                        <li><a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a></li>
+                        <li><a href="souvenirs.html" class="hover:text-white transition-colors">Souvenirs</a></li>
+                        <li><a href="voluntariado.html" class="hover:text-white transition-colors">Voluntariado</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <span class="block text-xs font-bold uppercase tracking-widest text-accent mb-3">Ayudar</span>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="donar.html" class="hover:text-white transition-colors">Donar</a></li>
+                        <li><a href="evidencia.html" class="hover:text-white transition-colors">Evidencia</a></li>
+                        <li><a href="transparencia.html" class="hover:text-white transition-colors">Transparencia</a></li>
+                        <li><a href="empresas.html" class="hover:text-white transition-colors">Empresas</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="space-y-3">
+                <span class="block text-xs font-bold uppercase tracking-widest text-accent">Boletín</span>
+                <form action="#" method="POST" class="space-y-2">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-slate-300">Carta polar · 1 email al mes</label>
+                        <small class="block text-xs text-slate-400">Rescates, expediciones y resultados. Sin spam.</small>
+                    </div>
+                    <input type="email" id="email" name="email" required placeholder="tu@correo.com" class="w-full rounded-md border border-slate-600 bg-white/5 px-3 py-2.5 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-accent">
+                    <button type="submit" class="w-full rounded-md bg-accent hover:bg-white text-primary text-xs font-bold uppercase tracking-wider py-2.5 px-4 transition-colors">Unirse</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-6 text-center text-xs text-slate-400">
+            <p>© 2026 Picaroni. Todos los aportes se destinan al cuidado y preservación de la especie.</p>
+        </div>
+
+    </div>
+</footer>
+
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+
+    menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', String(!isExpanded));
+    });
+</script>
+<script>
+    (function () {
+        var root = document.documentElement;
+        var btn = document.getElementById('theme-toggle');
+
+        function actualizar() {
+            btn.textContent = root.getAttribute('data-theme') === 'dark' ? 'Modo claro' : 'Modo oscuro';
+        }
+
+        actualizar();
+
+        btn.addEventListener('click', function () {
+            var siguiente = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            root.setAttribute('data-theme', siguiente);
+            try { localStorage.setItem('theme', siguiente); } catch (e) {}
+            actualizar();
+        });
+    })();
+</script>
+</body>
+</html>

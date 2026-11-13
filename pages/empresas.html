@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Companies | Penguin Foundation</title>
+    <meta name="description" content="Support penguin conservation as a company with a one-time gift or a membership.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
+    <link href="../dist/output.css" rel="stylesheet">
+</head>
+
+<body class="min-h-screen bg-white font-sans text-slate-600 antialiased flex flex-col justify-between">
+
+<!-- Header (igual en todas las páginas; ajustar rutas si cambia la ubicación) -->
+<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col xl:flex-row xl:items-center xl:justify-between">
+
+        <div class="flex items-center justify-between gap-3">
+            <a href="../index.html" class="font-display text-xl font-bold text-primary">Picaroni</a>
+            <div class="flex items-center gap-2">
+                <button type="button" id="theme-toggle" class="rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-primary hover:bg-slate-50 transition-colors cursor-pointer">Modo oscuro</button>
+                <button type="button" id="menu-btn" aria-expanded="false" aria-controls="menu" class="xl:hidden rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-primary hover:bg-slate-50 transition-colors cursor-pointer">Menú</button>
+            </div>
+        </div>
+
+        <nav id="menu" aria-label="Principal" class="hidden xl:block mt-4 xl:mt-0 border-t border-slate-200 pt-2 xl:border-0 xl:pt-0">
+            <ul class="flex flex-col text-sm xl:flex-row xl:items-center xl:gap-6">
+                <li><a href="../index.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Inicio</a></li>
+                <li><a href="pinguinos.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Pingüinos</a></li>
+                <li><a href="nosotros.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Nosotros</a></li>
+                <li><a href="souvenirs.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Souvenirs</a></li>
+                <li><a href="voluntariado.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Voluntariado</a></li>
+                <li><a href="evidencia.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Evidencia</a></li>
+                <li><a href="transparencia.html" class="block py-2 text-slate-600 hover:text-secondary transition-colors xl:py-0">Transparencia</a></li>
+                <li><a href="empresas.html" class="block py-2 font-semibold text-primary xl:py-0" aria-current="page">Empresas</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+<main>
+
+    <!-- Introducción -->
+    <section class="py-16 px-6 max-w-3xl mx-auto text-center">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-secondary mb-3">ALIADOS CORPORATIVOS</p>
+        <h1 class="font-display text-5xl md:text-6xl font-medium tracking-tight text-primary mb-6">Empresas</h1>
+        <p class="text-lg font-light text-slate-500 leading-relaxed">
+            Tu empresa puede apoyar la conservación de los pingüinos con un aporte único o con una membresía continua.
+            En ambos casos recibes un reporte de impacto.
+        </p>
+    </section>
+
+    <!-- Opciones de apoyo -->
+    <section class="pb-20 px-6 max-w-5xl mx-auto">
+        <div class="grid gap-6 md:grid-cols-2">
+
+            <article class="flex flex-col rounded-xl bg-primary p-8 shadow-lg">
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-3">Aporte continuo</p>
+                <h2 class="font-display text-3xl font-medium text-white mb-4">Membresía</h2>
+                <p class="font-light text-slate-300 leading-relaxed mb-6">Un apoyo mensual que permite planificar el trabajo a largo plazo.</p>
+                <ul class="space-y-2 text-sm text-slate-300 mb-8 list-disc list-inside">
+                    <li>Aporte mensual continuo</li>
+                    <li>Reporte de impacto ESG</li>
+                    <li>Visibilidad como socio en nuestra página</li>
+                    <li>Seguimiento de los destinos de tu aporte</li>
+                </ul>
+                <a href="donar.html" class="mt-auto inline-block rounded-md bg-white px-6 py-3 text-center text-sm font-bold uppercase tracking-wider text-primary hover:bg-accent transition-colors">Quiero aliarme</a>
+            </article>
+
+            <article class="flex flex-col rounded-xl border border-slate-200 bg-white p-8 shadow-md">
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-secondary mb-3">Aporte puntual</p>
+                <h2 class="font-display text-3xl font-medium text-primary mb-4">Aporte único</h2>
+                <p class="font-light text-slate-500 leading-relaxed mb-6">Una contribución puntual para una necesidad concreta de la fundación.</p>
+                <ul class="space-y-2 text-sm text-slate-500 mb-8 list-disc list-inside">
+                    <li>Aporte en una sola vez</li>
+                    <li>Reporte de impacto ESG</li>
+                    <li>Elección del destino: alimento, clínica o hábitat</li>
+                    <li>Seguimiento de los destinos de tu aporte</li>
+                </ul>
+                <a href="donar.html" class="mt-auto inline-block rounded-md bg-primary px-6 py-3 text-center text-sm font-bold uppercase tracking-wider text-white hover:bg-secondary transition-colors">Quiero aliarme</a>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Socios -->
+    <section class="bg-mist py-16 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+
+            <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500 mb-8">Con el respaldo de</h2>
+
+            <div class="grid grid-cols-2 items-center gap-6 md:grid-cols-5">
+
+                <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 h-20 shadow-sm">
+                    <img src="../assets/images/dev_alliance.png" alt="Logo de DevAlliance" class="max-h-12 w-auto object-contain" />
+                </div>
+
+                <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 h-20 shadow-sm">
+                    <img src="../assets/images/oceancare_logo.jpg" alt="Logo de OceanCare Labs" class="max-h-12 w-auto object-contain" />
+                </div>
+
+                <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 h-20 shadow-sm">
+                    <img src="../assets/images/vetpolar_logo.jpg" alt="Logo de VetPolar" class="max-h-12 w-auto object-contain" />
+                </div>
+
+                <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 h-20 shadow-sm">
+                    <img src="../assets/images/galapagos_logo.jpg" alt="Logo de Galápagos Trust" class="max-h-12 w-auto object-contain" />
+                </div>
+
+                <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 h-20 shadow-sm">
+                    <img src="../assets/images/boulders_bay.png" alt="Logo de Boulders Bay" class="max-h-12 w-auto object-contain" />
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer (igual en todas las páginas; ajustar rutas si cambia la ubicación) -->
+<footer class="bg-primary border-t border-white/10 text-slate-300 py-14 px-6 mt-auto">
+    <div class="max-w-6xl mx-auto space-y-8">
+
+        <div class="grid gap-8 md:grid-cols-3">
+            <div class="space-y-3">
+                <span class="font-display text-xl font-bold text-white">Picaroni</span>
+                <p class="text-sm text-slate-400">Cuidamos cada pingüino, en cada clima.</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <span class="block text-xs font-bold uppercase tracking-widest text-accent mb-3">Explorar</span>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../index.html" class="hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="pinguinos.html" class="hover:text-white transition-colors">Pingüinos</a></li>
+                        <li><a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a></li>
+                        <li><a href="souvenirs.html" class="hover:text-white transition-colors">Souvenirs</a></li>
+                        <li><a href="voluntariado.html" class="hover:text-white transition-colors">Voluntariado</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <span class="block text-xs font-bold uppercase tracking-widest text-accent mb-3">Ayudar</span>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="donar.html" class="hover:text-white transition-colors">Donar</a></li>
+                        <li><a href="evidencia.html" class="hover:text-white transition-colors">Evidencia</a></li>
+                        <li><a href="transparencia.html" class="hover:text-white transition-colors">Transparencia</a></li>
+                        <li><a href="empresas.html" class="hover:text-white transition-colors">Empresas</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="space-y-3">
+                <span class="block text-xs font-bold uppercase tracking-widest text-accent">Boletín</span>
+                <form action="#" method="POST" class="space-y-2">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-slate-300">Carta polar · 1 email al mes</label>
+                        <small class="block text-xs text-slate-400">Rescates, expediciones y resultados. Sin spam.</small>
+                    </div>
+                    <input type="email" id="email" name="email" required placeholder="tu@correo.com" class="w-full rounded-md border border-slate-600 bg-white/5 px-3 py-2.5 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-accent">
+                    <button type="submit" class="w-full rounded-md bg-accent hover:bg-white text-primary text-xs font-bold uppercase tracking-wider py-2.5 px-4 transition-colors">Unirse</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-6 text-center text-xs text-slate-400">
+            <p>© 2026 Picaroni. Todos los aportes se destinan al cuidado y preservación de la especie.</p>
+        </div>
+
+    </div>
+</footer>
+
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+
+    menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', String(!isExpanded));
+    });
+</script>
+<script>
+    (function () {
+        var root = document.documentElement;
+        var btn = document.getElementById('theme-toggle');
+
+        function actualizar() {
+            btn.textContent = root.getAttribute('data-theme') === 'dark' ? 'Modo claro' : 'Modo oscuro';
+        }
+
+        actualizar();
+
+        btn.addEventListener('click', function () {
+            var siguiente = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            root.setAttribute('data-theme', siguiente);
+            try { localStorage.setItem('theme', siguiente); } catch (e) {}
+            actualizar();
+        });
+    })();
+</script>
+</body>
+</html>
