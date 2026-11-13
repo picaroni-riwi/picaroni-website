@@ -6,33 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Penguins | Penguin Foundation</title>
   <meta name="description" content="Discover the penguin species of each habitat we protect.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <link href="../dist/output.css" rel="stylesheet">
 </head>
 
-<body class="bg-slate-900 text-white min-h-screen flex flex-col justify-between">
+<body class="min-h-screen bg-white font-sans text-slate-600 antialiased flex flex-col justify-between">
 
 <!-- Header (igual en todas las páginas; ajustar rutas si cambia la ubicación) -->
-<header class="bg-slate-800 border-b border-slate-700 sticky top-0 z-50">
+<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
   <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between">
 
     <div class="flex items-center justify-between">
-      <a href="../index.html" class="text-xl font-bold text-white">Picaroni</a>
+      <a href="../index.html" class="font-display text-xl font-bold text-primary">Picaroni</a>
 
       <button
               type="button"
               id="menu-btn"
               aria-expanded="false"
-              class="md:hidden bg-slate-700 hover:bg-slate-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition-colors cursor-pointer">
+              class="md:hidden rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-primary hover:bg-slate-50 transition-colors cursor-pointer">
         Menú
       </button>
     </div>
 
-    <nav id="menu" class="hidden md:flex flex-col md:flex-row gap-4 mt-4 md:mt-0 text-sm">
-      <a href="../index.html" class="text-slate-300 hover:text-emerald-400 transition-colors">Inicio</a>
-      <a href="pinguinos.html" aria-current="page" class="text-emerald-400 transition-colors">Pingüinos</a>
-      <a href="nosotros.html" class="text-slate-300 hover:text-emerald-400 transition-colors">Nosotros</a>
-      <a href="#" class="text-slate-300 hover:text-emerald-400 transition-colors">Souvenirs</a>
-      <a href="voluntariado.html" class="text-slate-300 hover:text-emerald-400 transition-colors">Voluntariado</a>
+    <nav id="menu" class="hidden md:flex flex-col md:flex-row md:items-center gap-5 mt-4 md:mt-0 text-sm">
+      <a href="../index.html" class="text-slate-600 hover:text-secondary transition-colors">Inicio</a>
+      <a href="pinguinos.html" aria-current="page" class="font-semibold text-primary transition-colors">Pingüinos</a>
+      <a href="nosotros.html" class="text-slate-600 hover:text-secondary transition-colors">Nosotros</a>
+      <a href="#" class="text-slate-600 hover:text-secondary transition-colors">Souvenirs</a>
+      <a href="voluntariado.html" class="text-slate-600 hover:text-secondary transition-colors">Voluntariado</a>
     </nav>
 
   </div>
@@ -42,24 +47,25 @@
 
   <!-- Introducción -->
   <section class="py-16 px-6 max-w-3xl mx-auto text-center">
-    <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">Pingüinos</h1>
-    <p class="text-lg text-slate-300 leading-relaxed">
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-secondary mb-3">ENCICLOPEDIA VIVA</p>
+    <h1 class="font-display text-5xl md:text-6xl font-medium tracking-tight text-primary mb-6">Pingüinos</h1>
+    <p class="text-lg font-light text-slate-500 leading-relaxed">
       Elige un hábitat para conocer la especie que vive allí y su estado de conservación.
     </p>
   </section>
 
   <!-- Selector de hábitats y ficha -->
-  <section class="pb-16 px-6 max-w-6xl mx-auto">
-    <div class="grid gap-8 md:grid-cols-[280px_1fr]">
+  <section class="bg-mist py-16 px-6">
+    <div class="max-w-6xl mx-auto grid gap-8 md:grid-cols-[280px_1fr]">
 
       <!-- Lista de hábitats (los botones se generan desde el arreglo "habitats") -->
       <div>
-        <h2 class="text-sm font-semibold tracking-widest uppercase text-slate-400 mb-4">Hábitats</h2>
+        <h2 class="text-xs font-bold tracking-widest uppercase text-slate-500 mb-4">Hábitats</h2>
         <ul id="lista-habitats" class="space-y-3"></ul>
       </div>
 
       <!-- Ficha de la especie -->
-      <section id="ficha" aria-live="polite" class="rounded-xl bg-slate-800 border border-slate-700 p-6 md:p-8">
+      <section id="ficha" aria-live="polite" class="rounded-xl bg-white border border-slate-200 shadow-lg p-6 md:p-8">
         <!-- Se llena con JavaScript -->
       </section>
 
@@ -69,51 +75,51 @@
 </main>
 
 <!-- Footer (igual en todas las páginas; ajustar rutas si cambia la ubicación) -->
-<footer class="bg-slate-800 border-t border-slate-700 text-slate-300 py-10 px-6 mt-auto">
+<footer class="bg-primary border-t border-white/10 text-slate-300 py-14 px-6 mt-auto">
   <div class="max-w-6xl mx-auto space-y-8">
 
     <div class="grid gap-8 md:grid-cols-3">
       <div class="space-y-3">
-        <span class="text-xl font-bold text-white">Picaroni</span>
+        <span class="font-display text-xl font-bold text-white">Picaroni</span>
         <p class="text-sm text-slate-400">Cuidamos cada pingüino, en cada clima.</p>
       </div>
 
       <div class="grid grid-cols-2 gap-4">
         <div>
-          <span class="block font-semibold text-white mb-2">Explorar</span>
-          <ul class="space-y-1 text-sm">
-            <li><a href="../index.html" class="hover:text-emerald-400">Inicio</a></li>
-            <li><a href="pinguinos.html" class="hover:text-emerald-400">Pingüinos</a></li>
-            <li><a href="nosotros.html" class="hover:text-emerald-400">Nosotros</a></li>
-            <li><a href="#" class="hover:text-emerald-400">Souvenirs</a></li>
-            <li><a href="voluntariado.html" class="hover:text-emerald-400">Voluntariado</a></li>
+          <span class="block text-xs font-bold uppercase tracking-widest text-accent mb-3">Explorar</span>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../index.html" class="hover:text-white transition-colors">Inicio</a></li>
+            <li><a href="pinguinos.html" class="hover:text-white transition-colors">Pingüinos</a></li>
+            <li><a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Souvenirs</a></li>
+            <li><a href="voluntariado.html" class="hover:text-white transition-colors">Voluntariado</a></li>
           </ul>
         </div>
         <div>
-          <span class="block font-semibold text-white mb-2">Ayudar</span>
-          <ul class="space-y-1 text-sm">
-            <li><a href="donar.html" class="hover:text-emerald-400">Donar</a></li>
-            <li><a href="evidencia.html" class="hover:text-emerald-400">Evidencia</a></li>
-            <li><a href="transparencia.html" class="hover:text-emerald-400">Transparencia</a></li>
-            <li><a href="#" class="hover:text-emerald-400">Empresas</a></li>
+          <span class="block text-xs font-bold uppercase tracking-widest text-accent mb-3">Ayudar</span>
+          <ul class="space-y-2 text-sm">
+            <li><a href="donar.html" class="hover:text-white transition-colors">Donar</a></li>
+            <li><a href="evidencia.html" class="hover:text-white transition-colors">Evidencia</a></li>
+            <li><a href="transparencia.html" class="hover:text-white transition-colors">Transparencia</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Empresas</a></li>
           </ul>
         </div>
       </div>
 
       <div class="space-y-3">
-        <span class="block font-semibold text-white">Boletín</span>
+        <span class="block text-xs font-bold uppercase tracking-widest text-accent">Boletín</span>
         <form action="#" method="POST" class="space-y-2">
           <div>
             <label for="email" class="block text-sm font-medium text-slate-300">Carta polar · 1 email al mes</label>
             <small class="block text-xs text-slate-400">Rescates, expediciones y resultados. Sin spam.</small>
           </div>
-          <input type="email" id="email" name="email" required placeholder="tu@correo.com" class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-emerald-500">
-          <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors">Unirse</button>
+          <input type="email" id="email" name="email" required placeholder="tu@correo.com" class="w-full rounded-md border border-slate-600 bg-white/5 px-3 py-2.5 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-accent">
+          <button type="submit" class="w-full rounded-md bg-accent hover:bg-white text-primary text-xs font-bold uppercase tracking-wider py-2.5 px-4 transition-colors">Unirse</button>
         </form>
       </div>
     </div>
 
-    <div class="border-t border-slate-700 pt-6 text-center text-xs text-slate-500">
+    <div class="border-t border-white/10 pt-6 text-center text-xs text-slate-400">
       <p>© 2026 Picaroni. Todos los aportes se destinan al cuidado y preservación de la especie.</p>
     </div>
 
@@ -175,28 +181,28 @@
   const lista = document.getElementById('lista-habitats');
   const ficha = document.getElementById('ficha');
 
-  const claseBase = 'w-full text-left rounded-lg border px-4 py-3 transition-colors';
-  const claseInactiva = 'border-slate-700 bg-slate-800 text-slate-300 hover:bg-slate-700';
-  const claseActiva = 'border-emerald-500 bg-emerald-600/20 text-white font-bold';
+  const claseBase = 'w-full text-left rounded-md border px-4 py-3 transition-colors cursor-pointer';
+  const claseInactiva = 'border-slate-300 bg-white text-primary hover:border-secondary';
+  const claseActiva = 'border-primary ring-1 ring-primary bg-white text-primary font-bold';
 
   function mostrarFicha(habitat) {
     // Sin datos: mensaje de espera
     if (!habitat || !habitat.especie) {
-      ficha.innerHTML = '<p class="text-slate-300">Pronto más información.</p>';
+      ficha.innerHTML = '<p class="text-slate-500">Pronto más información.</p>';
       return;
     }
 
     ficha.innerHTML = `
             <img src="${habitat.imagen}" alt="${habitat.alt}" class="mb-6 h-64 w-full rounded-lg object-cover" />
-            <p class="text-xs text-slate-400 mb-1"></p>
-            <h2 class="text-2xl font-bold text-white mb-2"></h2>
-            <p class="text-slate-300 mb-4"></p>
-            <p class="text-sm text-slate-400">Estado: <span class="text-white"></span></p>
+            <p class="ficha-nombre text-xs font-semibold uppercase tracking-[0.2em] text-secondary mb-2"></p>
+            <h2 class="ficha-especie font-display text-3xl font-medium tracking-tight text-primary mb-2"></h2>
+            <p class="ficha-frase text-slate-500 mb-4"></p>
+            <p class="text-sm text-slate-500">Estado: <span class="ficha-estado inline-block rounded bg-secondary px-2 py-1 text-xs font-bold text-white"></span></p>
         `;
-    ficha.querySelector('p.text-xs').textContent = habitat.nombre;
-    ficha.querySelector('h2').textContent = habitat.especie;
-    ficha.querySelector('p.text-slate-300').textContent = habitat.frase;
-    ficha.querySelector('span').textContent = habitat.estado;
+    ficha.querySelector('.ficha-nombre').textContent = habitat.nombre;
+    ficha.querySelector('.ficha-especie').textContent = habitat.especie;
+    ficha.querySelector('.ficha-frase').textContent = habitat.frase;
+    ficha.querySelector('.ficha-estado').textContent = habitat.estado;
   }
 
   function activar(boton, habitat) {
