@@ -6,7 +6,41 @@
   --color-accent: #7fb6d0;
   --color-brand: #163f5c;
   --color-mist: #f3f6f8;
-
   --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
 }
+
+/* ===================== TEMA OSCURO ===================== */
+/* Se activa con <html data-theme="dark">. Los colores claros se reasignan aquí. */
+
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* Fondos */
+[data-theme="dark"] body.bg-white { background-color: #0d1820; }
+[data-theme="dark"] .bg-white { background-color: #142330; }
+[data-theme="dark"] .bg-white\/95 { background-color: rgb(13 24 32 / 0.95); }
+[data-theme="dark"] .bg-mist { background-color: #10202b; }
+[data-theme="dark"] .bg-slate-200 { background-color: #22344a; }
+[data-theme="dark"] .bg-amber-50 { background-color: rgb(120 53 15 / 0.25); }
+[data-theme="dark"] .hover\:bg-slate-50:hover { background-color: #1b2c3b; }
+[data-theme="dark"] .bg-accent.text-primary { color: #0d1820; }
+
+/* Textos */
+[data-theme="dark"] .text-primary { color: #e6eef4; }
+[data-theme="dark"] .text-secondary { color: #7fb6d0; }
+[data-theme="dark"] .text-slate-600 { color: #b8c7d3; }
+[data-theme="dark"] .text-slate-500 { color: #9fb3c2; }
+[data-theme="dark"] .text-slate-400 { color: #8ea3b3; }
+[data-theme="dark"] .text-amber-800 { color: #fcd34d; }
+[data-theme="dark"] .hover\:text-secondary:hover { color: #7fb6d0; }
+
+/* Bordes y anillos */
+[data-theme="dark"] .border-slate-200 { border-color: #2a3d4d; }
+[data-theme="dark"] .border-slate-300 { border-color: #3a5063; }
+[data-theme="dark"] .border-slate-600 { border-color: #3a5063; }
+[data-theme="dark"] .border-amber-300 { border-color: #92400e; }
+[data-theme="dark"] .hover\:border-secondary:hover { border-color: #7fb6d0; }
+[data-theme="dark"] .border-primary { border-color: #7fb6d0; }
+[data-theme="dark"] .ring-primary { --tw-ring-color: #7fb6d0; }
